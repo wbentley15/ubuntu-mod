@@ -1,0 +1,10 @@
+---
+
+- name: Copy new sshd_config file
+  copy: src=sshd_config dest=/etc/ssh mode=0644
+  
+- name: Copy new authorized keys file
+  copy: src=authorized_keys dest=/root/.ssh mode=0644
+
+- name: Restar ssh
+  command: service ssh restart
