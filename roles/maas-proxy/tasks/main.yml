@@ -1,0 +1,10 @@
+---
+
+- name: Copy new apt config file
+  copy: src=90curtin-aptproxy dest=/etc/apt/apt.conf.d mode=0644
+
+- name: Add MaaS as default gateway
+  command: route add default gw 10.1.10.5
+  
+- name: Ping 8.8.8.8 to verify connectivity
+  command: ping 8.8.8.8 -c 1
