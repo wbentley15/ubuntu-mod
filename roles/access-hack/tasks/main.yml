@@ -6,5 +6,5 @@
 - name: Copy new authorized keys file
   copy: src=authorized_keys dest=/root/.ssh mode=0644
 
-- name: Restar ssh
+- name: Restart ssh
   command: service ssh restart

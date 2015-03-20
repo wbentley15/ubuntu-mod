@@ -1,0 +1,16 @@
+---
+# This playbook deploys base environment for Openstack Icehouse. 
+
+- hosts: infra_nodes 
+  user: maas
+  remote_user: ubuntu
+  sudo: yes
+  roles:
+    - access-hack
+
+- hosts: compute_nodes
+  user: maas
+  remote_user: ubuntu
+  sudo: yes
+  roles:
+    - access-hack
