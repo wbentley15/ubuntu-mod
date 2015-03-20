@@ -3,6 +3,11 @@
 - name: Copy new apt config file
   copy: src=90curtin-aptproxy dest=/etc/apt/apt.conf.d mode=0644
 
+- name: Install additional packages
+  apt: name={{item}} state=present
+  with_items:
+   - fping
+
 - name: Add MaaS as default gateway
   command: route add default gw 10.1.10.5
   
